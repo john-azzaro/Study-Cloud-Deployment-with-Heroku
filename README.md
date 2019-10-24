@@ -26,16 +26,29 @@ Heroku runs apps in dynos, which are essentially virtual computers that can scal
 <dl>
 <dd>
 
-### Create an app on Heroku:
+### STEP 1: Create an app on Heroku:
 ------
-The first step to deploy your app to Heroku is to move into your project folder containing your node app and run the command ```heroku create```. When you do this, Heroku will create an app on Heroku and prepare Heroku to recieve your source code. Then a random project name for you while also setting up a subdomain at herokuapp.com. Note that before this step you should have a package.json file as Heroku expects that your project will have this file included.
+Assuming you have created an account on Heroku, the first step to deploy your app to Heroku is to move into your project folder containing your node app and run the command ```heroku create```. When you do this, Heroku will create an app on Heroku and prepare Heroku to recieve your source code. Then a random project name for you while also setting up a subdomain at herokuapp.com. Note that before this step you should have a package.json file as Heroku expects that your project will have this file included.
+
+```
+    heroku create
+```
 
 <br>
 
-### Push app to Heroku:
+### STEP 2: Push app to Heroku:
 ------
+To push your app to heroku, run ```heroku create``` at the command line.
+```
+    heroku create
+```
+After you end this command, you should seea confirmation of the application creation on Heroku, the identifcation of the Heroku app created, and associated URL's.
+```
+    $ heroku create
+    Creating app... done, fast-badlands-55259
+    https://fast-badlands-55259.herokuapp.com/ | https://git.heroku.com/fast-badlands-55259.git
 
-https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app
+```
 
 
 
