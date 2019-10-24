@@ -5,13 +5,13 @@ The Cloud Deployment with Heroku Study examines the relatively painless deployme
 
 Here are some questions covered in this study:
 
-* [What are some interesting takeaways from the Cloud Deployment with Heroku Study?](#What-are-some-interesting-takeaways-from-the-Cloud-Deployment-with-Heroku-Study)
+* [Are there any interesting takeaways from the Cloud Deployment with Heroku Study?](#Are-there-any-interesting-takeaways-from-Cloud-Deployment-with-Heroku-Study)
 * [What is Heroku?](#What-is-Heroku)
 * [How do you deploy an app to Heroku?](#How-do-you-deploy-an-app-to-Heroku)
 
 <br>
 
-## What are some interesting takeaways from the Cloud Deployment with Heroku Study?
+## Are there any interesting takeaways from the Cloud Deployment with Heroku Study?
 
 <dl>
 
