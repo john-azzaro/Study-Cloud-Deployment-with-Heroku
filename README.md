@@ -1,23 +1,13 @@
 # Cloud Deployment with Heroku Study
 
 ## What is the Cloud Deployment with Heroku Study?
-The Cloud Deployment with Heroku Study examines
+The Cloud Deployment with Heroku Study examines the relatively painless deployment of an application to Heroku (and by extension AWS). Although there are a few cons associated with using Heroku such as scaling costs and slow loads if the app is inactive, Heroku is a powerful tool for app deployment.
 
 Here are some questions covered in this study:
 
+* [What are some interesting takeaways from the Cloud Deployment with Heroku Study?](#What-are-some-interesting-takeaways-from-the-Cloud-Deployment-with-Heroku-Study)
 * [What is Heroku?](#What-is-Heroku)
 * [How do you deploy an app to Heroku?](#How-do-you-deploy-an-app-to-Heroku)
-* [What are some interesting takeaways from the Cloud Deployment with Heroku Study?](#What-are-some-interesting-takeaways-from-the-Cloud-Deployment-with-Heroku-Study)
-* [](#)
-* [](#)
-
-<br>
-
-## What is Heroku?
-
-Heroku is a container-based cloud platform as a servive (PaaS) that developers use to deploy, manage, and scale modern applications. In other words, it is a deployment tool meant to make life easier for developers.
-
-Heroku runs apps in dynos, which are essentially virtual computers that can scale the power required to run those apps. This means that as your demand for your app grows, you can scale horizontally or vertically (for a price of course). Important to note that Heroku does not host your app as it is deployed to Amazon Web Services (AWS).
 
 <br>
 
@@ -37,7 +27,7 @@ AWS is an Infrastructure as a Serice (IaaS) provider, which is responsible for m
 
 <dd>
 
-Initially, Heroku is cheap and they include limited free dynos for development. However, as you scale your application (add more RAM, CPU's, etc.) to meet growing demand and create more dynos, the costs can increase signifigantly. And since Heroku runs on AWS infrastructure, the prices can only be so low.
+Initially, Heroku is cheap and they include free dynos for development at 1000 free hours per month. However, as you scale your application (add more RAM, CPU's, etc.) to meet growing demand and create more dynos, the costs can increase signifigantly. And since Heroku runs on AWS infrastructure, the prices can only be so low.
 
 </dd>
 
@@ -53,18 +43,21 @@ Using free dynos will most likely "sleep" when there are larger periods of inact
 
 <dd>
 
-Heroku expects your project to include a *package.json*. As a breif refreshed, the *poackage.json* file defines all of the dependencies your application uses and need to be installed with the application. Functionally, the Heroku Node.js buildpack is employed only after the application it detects this in the root directory. 
+Heroku expects your project to include a *package.json*. As a brief refresher, the *poackage.json* file defines all of the dependencies your application uses and need to be installed with the application. Functionally, the Heroku Node.js buildpack is employed only after the application it detects it in the root directory. 
 
-If you try to run the ```git push heroku master``` at the command line and you recieve an error to the effect of the push being rejected, it most likely because the *package.json* is NOT in the root directory.
+So if you try to run the ```git push heroku master``` at the command line and you recieve an error to the effect of the push being rejected, it most likely because the *package.json* is NOT in the root directory.
 
-</dd>
-
-
-
-<dd>
 </dd>
 
 </dl>
+
+<br>
+
+## What is Heroku?
+
+Heroku is a container-based cloud platform as a servive (PaaS) that developers use to deploy, manage, and scale modern applications. In other words, it is a deployment tool meant to make life easier for developers.
+
+Heroku runs apps in dynos, which are essentially virtual computers that can scale the power required to run those apps. This means that as your demand for your app grows, you can scale horizontally or vertically (for a price of course). Important to note that Heroku does not host your app as it is deployed to Amazon Web Services (AWS).
 
 <br>
 
@@ -91,7 +84,7 @@ To push your app to heroku, run ```heroku create``` at the command line.
 ```
 After you end this command, you should seea confirmation of the application creation on Heroku, the identifcation of the Heroku app created, and two associated URL's. The first URL is the direct heroku app. The second is git remote.
 ```
-    $ heroku create
+    heroku create
     Creating app... done, fast-badlands-55259
     https://fast-badlands-55259.herokuapp.com/ | https://git.heroku.com/fast-badlands-55259.git
 
@@ -99,7 +92,7 @@ After you end this command, you should seea confirmation of the application crea
 
 <br>
 
-### STEP 3: Push App to Heroku
+### STEP 3: Push App to Heroku:
 ------
 When you are ready to deploy your app to Heroku, run ```git push heroku master```.
 ```
@@ -166,6 +159,21 @@ When you run this command, you shoudl see a build process confirming the success
 ```
 
 <br>
+
+## STEP 4: Check to see if you have a dyno and give it a test run!
+To do this, you simply need to run the following at the command line:
+```
+    heroku ps:scale web=1
+```
+When you run that command, you should see the following:
+```
+    heroku ps:scale web=1
+    Scaling dynos... done, now running web at 1:Free
+```
+And then to see the app live, simply open the app (which will be automatically pointed to your app on the Heroku servers):
+```
+    heroku open
+```
 
 </dd>
 </dl>
