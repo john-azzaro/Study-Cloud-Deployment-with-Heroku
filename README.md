@@ -73,32 +73,22 @@ Assuming you have created an account on Heroku, the first step to deploy your ap
 ```
     heroku create
 ```
-
-<br>
-
-### STEP 2: Push app to Heroku:
-------
-To push your app to heroku, run ```heroku create``` at the command line.
-```
-    heroku create
-```
 After you end this command, you should seea confirmation of the application creation on Heroku, the identifcation of the Heroku app created, and two associated URL's. The first URL is the direct heroku app. The second is git remote.
 ```
     heroku create
     Creating app... done, fast-badlands-55259
     https://fast-badlands-55259.herokuapp.com/ | https://git.heroku.com/fast-badlands-55259.git
-
 ```
 
 <br>
 
-### STEP 3: Push App to Heroku:
+### STEP 2: Push App to Heroku:
 ------
 When you are ready to deploy your app to Heroku, run ```git push heroku master```.
 ```
     git push heroku master
 ```
-When you run this command, you shoudl see a build process confirming the successful installation of your app to Heroku:
+When you run this command, you should see a build process confirming the successful installation of your app to Heroku:
 ```
     $ git push heroku master
     Counting objects: 497, done.
@@ -160,7 +150,7 @@ When you run this command, you shoudl see a build process confirming the success
 
 <br>
 
-## STEP 4: Check to see if you have a dyno and give it a test run!
+## STEP 3: Check to see if you have a dyno and give it a test run!
 To do this, you simply need to run the following at the command line:
 ```
     heroku ps:scale web=1
