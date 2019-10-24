@@ -7,7 +7,7 @@ Here are some questions covered in this study:
 
 * [What is Heroku?](#What-is-Heroku)
 * [How do you deploy an app to Heroku?](#How-do-you-deploy-an-app-to-Heroku)
-* [](#)
+* [What are some interesting takeaways from the Cloud Deployment with Heroku Study?](#What-are-some-interesting-takeaways-from-the-Cloud-Deployment-with-Heroku-Study)
 * [](#)
 * [](#)
 
@@ -18,6 +18,53 @@ Here are some questions covered in this study:
 Heroku is a container-based cloud platform as a servive (PaaS) that developers use to deploy, manage, and scale modern applications. In other words, it is a deployment tool meant to make life easier for developers.
 
 Heroku runs apps in dynos, which are essentially virtual computers that can scale the power required to run those apps. This means that as your demand for your app grows, you can scale horizontally or vertically (for a price of course). Important to note that Heroku does not host your app as it is deployed to Amazon Web Services (AWS).
+
+<br>
+
+## What are some interesting takeaways from the Cloud Deployment with Heroku Study?
+
+<dl>
+
+### Heroku runs on Amazon Web Services (AWS).
+
+<dd>
+
+AWS is an Infrastructure as a Serice (IaaS) provider, which is responsible for managing large shared data centers. Those data centers are what we call the "cloud". Although there a few other cloud service providers like Azure and Google, Heroku seems to be the best for developers in terms of ease and use. Technically, you could bypass Heroku and use AWS directly, but it seems like there is a LOT of high level knowledge required. There are alternatives such as Nanobox, Back4App, Firebase, etc. but Heroku is a great place to start.
+
+</dd>
+
+### Using Heroku can get VERY expensive.
+
+<dd>
+
+Initially, Heroku is cheap and they include limited free dynos for development. However, as you scale your application (add more RAM, CPU's, etc.) to meet growing demand and create more dynos, the costs can increase signifigantly. And since Heroku runs on AWS infrastructure, the prices can only be so low.
+
+</dd>
+
+### Heroku apps "sleep".
+
+<dd>
+
+Using free dynos will most likely "sleep" when there are larger periods of inactivity. This isnt necessarily a bad thing, but expect inactive Heroku apps to take at least 20 seconds to "wake up" before you make any call to the server.
+
+</dd>
+
+### You need to have a package.json file.
+
+<dd>
+
+Heroku expects your project to include a *package.json*. As a breif refreshed, the *poackage.json* file defines all of the dependencies your application uses and need to be installed with the application. Functionally, the Heroku Node.js buildpack is employed only after the application it detects this in the root directory. 
+
+If you try to run the ```git push heroku master``` at the command line and you recieve an error to the effect of the push being rejected, it most likely because the *package.json* is NOT in the root directory.
+
+</dd>
+
+
+
+<dd>
+</dd>
+
+</dl>
 
 <br>
 
