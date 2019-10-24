@@ -42,7 +42,7 @@ To push your app to heroku, run ```heroku create``` at the command line.
 ```
     heroku create
 ```
-After you end this command, you should seea confirmation of the application creation on Heroku, the identifcation of the Heroku app created, and associated URL's.
+After you end this command, you should seea confirmation of the application creation on Heroku, the identifcation of the Heroku app created, and two associated URL's. The first URL is the direct heroku app. The second is git remote.
 ```
     $ heroku create
     Creating app... done, fast-badlands-55259
@@ -50,7 +50,75 @@ After you end this command, you should seea confirmation of the application crea
 
 ```
 
+<br>
 
+### STEP 3: Push App to Heroku
+------
+When you are ready to deploy your app to Heroku, run ```git push heroku master```.
+```
+    git push heroku master
+```
+When you run this command, you shoudl see a build process confirming the successful installation of your app to Heroku:
+```
+    $ git push heroku master
+    Counting objects: 497, done.
+    Delta compression using up to 8 threads.
+    Compressing objects: 100% (379/379), done.
+    Writing objects: 100% (497/497), 234.92 KiB | 23.49 MiB/s, done.
+    Total 497 (delta 83), reused 497 (delta 83)
+    remote: Compressing source files... done.
+    remote: Building source:
+    remote:
+    remote: -----> Node.js app detected
+    remote:
+    remote: -----> Creating runtime environment
+    remote:
+    remote:        NPM_CONFIG_LOGLEVEL=error
+    remote:        NODE_ENV=production
+    remote:        NODE_MODULES_CACHE=true
+    remote:        NODE_VERBOSE=false
+    remote:
+    remote: -----> Installing binaries
+    remote:        engines.node (package.json):  10.x
+    remote:        engines.npm (package.json):   unspecified (use default)
+    remote:
+    remote:        Resolving node version 10.x...
+    remote:        Downloading and installing node 10.17.0...
+    remote:        Using default npm version: 6.11.3
+    remote:
+    remote: -----> Installing dependencies
+    remote:        Installing node modules (package.json)
+    remote:        added 130 packages from 100 contributors and audited 248 packages in 4.801s
+    remote:        found 0 vulnerabilities
+    remote:
+    remote:
+    remote: -----> Build
+    remote:
+    remote: -----> Pruning devDependencies
+    remote:        removed 79 packages and audited 127 packages in 1.324s
+    remote:        found 0 vulnerabilities
+    remote:
+    remote:
+    remote: -----> Caching build
+    remote:        - node_modules
+    remote:
+    remote: -----> Build succeeded!
+    remote: -----> Discovering process types
+    remote:        Procfile declares types -> web
+    remote:
+    remote: -----> Compressing...
+    remote:        Done: 19.8M
+    remote: -----> Launching...
+    remote:        Released v3
+    remote:        https://fast-badlands-55259.herokuapp.com/ deployed to Heroku
+    remote:
+    remote: Verifying deploy... done.
+    To https://git.heroku.com/fast-badlands-55259.git
+    * [new branch]      master -> master
+
+```
+
+<br>
 
 </dd>
 </dl>
